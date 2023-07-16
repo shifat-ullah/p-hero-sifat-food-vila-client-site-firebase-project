@@ -57,7 +57,7 @@ const Chef = () => {
                             type: "spring"
                         }} className='shadow-md p-7 lg:w-5/12 rounded-lg'>
                 <div className="type-animation">
-                    <h1 className='text-4xl text-center mx-auto font-semibold mb-5 border-b-4  border-orange-400 w-fit'><span className='text-orange-400'>Kode</span> Rastaurand</h1>
+                    <h1 className='text-4xl text-center mx-auto font-semibold mb-5 border-b-4  border-orange-400 w-fit'><span className='text-orange-400'>Sifat</span> Food villa</h1>
                     <div className='-mt-2 text-xl text-orange-400 font-medium'><span className=' text-gray-600 font-medium'>We Have In Our Country</span>{' '}
                     <TypeAnimation className=''
                         sequence={[

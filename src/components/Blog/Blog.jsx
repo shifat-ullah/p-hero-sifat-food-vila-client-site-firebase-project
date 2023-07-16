@@ -1,6 +1,5 @@
 import React from "react";
-// import Pdf from "react-to-pdf";
-import Pdf from '@react-pdf/renderer';
+import Pdf from "react-to-pdf";
 import { FaDownload } from "react-icons/fa";
 import { useNavigation } from "react-router-dom";
 import './Blog.css'
@@ -142,4 +141,3 @@ const Blog = () => {
 };
 
 export default Blog;
-

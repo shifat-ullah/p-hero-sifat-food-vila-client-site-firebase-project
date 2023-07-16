@@ -1,8 +1,8 @@
+/* eslint-disable no-unused-vars */
 import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ChefContext } from '../../ChefProviders/ChefProvider';
 import { updateProfile } from 'firebase/auth';
-// import { updateProfile } from 'firebase/auth';
 
 
 const SignUp = () => {
@@ -18,14 +18,15 @@ const SignUp = () => {
         const form = event.target;
         const name = form.name.value;
         const email = form.email.value;
+        const photo = form.photo.value;
         const password = form.password.value;
-        console.log(name, email, password);
+        console.log(name, email, password, photo);
 
         signUp(email, password)
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                updateUserData(user, name);
+                updateUserData(user, name, photo);
                 navigate(from, { replace: true })
                 Swal.fire(
                     "Success!",
@@ -35,11 +36,11 @@ const SignUp = () => {
             })
             .catch(error => {
                 console.log(error);
-                // Swal.fire(
-                //     "Oops!",
-                //     "Something went wrong, please try again!",
-                //     "error"
-                //   );
+                Swal.fire(
+                    "Oops!",
+                    "Something went wrong, please try again!",
+                    "error"
+                  );
             })
     }
 
@@ -47,10 +48,10 @@ const SignUp = () => {
         setPasswordStatus(!passwordStatus);
     }
 
-    const updateUserData = (user, name)=>{
+    const updateUserData = (user, name, photo)=>{
         updateProfile(user, {
             displayName: name,
-
+            photoURL: photo,
         })
         .then(()=>{
             console.log('User name updated')
@@ -82,7 +83,12 @@ const SignUp = () => {
                             <input type="email" placeholder="example@gmail.com" name='email' className="input input-bordered" required />
                         </div>
 
-                       
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Choose Your Photo</span>
+                            </label>
+                            <input type="text" placeholder="Your photo" name='photo' className="input input-bordered" required />
+                        </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Your password</span>
