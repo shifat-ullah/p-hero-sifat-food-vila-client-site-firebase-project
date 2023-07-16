@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import brandLogo from '../../assets/logo.png'
+import brandLogo from '../../assets/2.png'
 import './Header.css';
 import { FaUserAlt, FaArrowCircleRight } from 'react-icons/fa';
 import { FiLogOut } from 'react-icons/fi';
@@ -42,7 +42,7 @@ const Header = () => {
                 </div>
             </div>
             <div className="navbar-center" id='brand-logo'>
-                <img src={brandLogo} alt="" />
+                <img className=' rounded w-28 h-20' src={brandLogo} alt="" />
             </div>
             <div className="navbar-end">
                 <button className="btn btn-ghost btn-circle mt-1">
